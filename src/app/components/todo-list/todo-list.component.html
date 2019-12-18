@@ -1,0 +1,9 @@
+<div class="todo-list__content js-todo-input" *ngFor="let todo of this.todos; let i = index">
+  <div class="todo-list" data-id="{{todo.id}}">
+    <div class="todo-list__item todo-title">Title:{{todo.title}}</div>
+    <div class="todo-list__item todo-description">Description:{{todo.description}}</div>
+    <div class="js-buttons-area" [ngSwitch]="{{todo.status}}">
+      <div *ngSwitchCase="0">22222</div>
+    </div>
+  </div>
+</div>
