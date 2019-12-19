@@ -19,8 +19,8 @@ export class TodoListComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.todos)
   }
+
   remove(id) {
     this.todoService.delete(id);
   }
