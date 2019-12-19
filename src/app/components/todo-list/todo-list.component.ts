@@ -19,7 +19,7 @@ export class TodoListComponent implements OnInit {
 
 
   ngOnInit() {
-
+    console.log(this.todos)
   }
   remove(id) {
     this.todoService.delete(id);
@@ -27,6 +27,7 @@ export class TodoListComponent implements OnInit {
 
   setStatusActive(id) {
     this.todoService.setStatusActive(id);
+
   }
 
   setStatusDone(id) {
