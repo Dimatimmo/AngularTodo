@@ -21,33 +21,19 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
 
   }
-
   remove(id) {
     this.todoService.delete(id);
   }
 
-  setStatus(id, status: TodoStatus) {
-    this.todoService.setStatus(id, status);
+  setStatusActive(id) {
+    this.todoService.setStatusActive(id);
   }
 
-  bindEventListeners() {
-    const removeButton = document.querySelectorAll(".js-remove-todo");
-    const doneButton = document.querySelectorAll(".js-done-todo");
-    const holdButton = document.querySelectorAll(".js-hold-todo");
-    const activeButton = document.querySelectorAll(".js-active-todo");
-
-    this.bindEvents(removeButton, this.remove);
-    this.bindEvents(doneButton, this.setStatus, TodoStatus.DONE);
-    this.bindEvents(holdButton, this.setStatus, TodoStatus.HOLD);
-    this.bindEvents(activeButton, this.setStatus, TodoStatus.ACTIVE);
-  }
-  bindEvents(btn, callback, status) {
-    for (let i = 0; i < btn.length; i++) {
-      btn[i].addEventListener(
-        "click",
-        callback.bind(this, btn[i].getAttribute("data-id"), status)
-      );
-    }
+  setStatusDone(id) {
+    this.todoService.setStatusDone(id);
   }
 
+  setStatusHold(id) {
+    this.todoService.setStatusHold(id);
+  }
 }

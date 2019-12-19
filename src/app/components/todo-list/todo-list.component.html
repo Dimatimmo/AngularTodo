@@ -2,8 +2,12 @@
   <div class="todo-list" data-id="{{todo.id}}">
     <div class="todo-list__item todo-title">Title:{{todo.title}}</div>
     <div class="todo-list__item todo-description">Description:{{todo.description}}</div>
-    <div class="js-buttons-area" [ngSwitch]="{{todo.status}}">
-      <div *ngSwitchCase="0">22222</div>
+    <p>Status {{todo.status}}</p>
+    <div class="js-buttons-area">
+      <button class="btn js-done-todo" data-id="{{todo.id}}" (click)="setStatusDone(todo.id)">Done</button>
+      <button class="btn js-hold-todo" data-id="{{todo.id}}" (click)="setStatusHold(todo.id)">Hold</button>
+      <button class="btn js-active-todo" data-id="{{todo.id}}" (click)="setStatusActive(todo.id)">Active</button>
+      <button class="btn js-remove-todo" data-id="{{todo.id}}" (click)="remove(todo.id)">Remove</button>
     </div>
   </div>
 </div>

@@ -51,8 +51,6 @@ export class TodoInputComponent implements OnInit {
 
       title.value = "";
       description.value = "";
-
-      console.log(this.todoService.todos)
     }
   }
 

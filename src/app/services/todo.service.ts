@@ -19,9 +19,21 @@ export class TodoService {
 
   update() {}
 
-  setStatus(id: string, status: TodoStatus) {
+  setStatusHold(id: string) {
     const indx = this.todos.findIndex(x => x.id === id);
-    this.todos[indx].status = status;
+    this.todos[indx].status =  TodoStatus.HOLD;
+    this.todos$.next(this.todos);
+  }
+
+  setStatusActive(id: string) {
+    const indx = this.todos.findIndex(x => x.id === id);
+    this.todos[indx].status = TodoStatus.ACTIVE;
+    this.todos$.next(this.todos);
+  }
+
+  setStatusDone(id: string) {
+    const indx = this.todos.findIndex(x => x.id === id);
+    this.todos[indx].status =  TodoStatus.DONE;
     this.todos$.next(this.todos);
   }
 
